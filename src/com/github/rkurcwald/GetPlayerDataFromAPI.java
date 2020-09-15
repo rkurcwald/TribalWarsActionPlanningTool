@@ -30,40 +30,20 @@ public class GetPlayerDataFromAPI
 		try
 		{	
 
-			URL finalURL= new URL(stringURL);
-
-			//##################	WORK
-			BufferedInputStream iStream = new BufferedInputStream(finalURL.openStream());
-			
-			BufferedReader readVal=null;
-			try
+			URL url= new URL(stringURL);
+			URLConnection conn = url.openConnection();
+			String redirect = conn.getHeaderField("Location");
+			if (redirect != null)
 			{
-
-				readVal = new BufferedReader(new InputStreamReader(iStream,"UTF-8"),BUFFERSIZE);
-			//	BufferedReader readVal = new BufferedReader(new InputStreamReader(finalURL.openStream()));
-
-	/*			for(int data;(data=readVal.read())>-1;)
-				{
-					playerData.add(((BufferedReader) readVal).readLine().toString());
-					
-				} */
-				String inLine;
-				while ((inLine = readVal.readLine())!= null)
-				{
-					System.out.println(inLine);
-					playerData.add(inLine);
-				}
+			    conn = new URL(redirect).openConnection();
 			}
-			finally
+			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+
+			while ((inputLine = in.readLine()) != null) 
 			{
-				readVal.close();
-				
-				for(int i=0;i<playerData.size();i++)
-				{
-					System.out.println(finalURL.getFile().length());
-				}
-			} 
-			//##################		
+			    playerData.add(inputLine);
+			}
 			
 		}
 		catch(IOException ex)

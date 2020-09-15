@@ -19,6 +19,11 @@ public class Main extends JPanel {
 		try {
 			playerData = new GetPlayerDataFromAPI(glv);
 			ArrayList<String> test= playerData.getPlayerData();
+			
+			for(int i=0;i<test.size();i++)
+			{
+				System.out.println(test.get(i));
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
