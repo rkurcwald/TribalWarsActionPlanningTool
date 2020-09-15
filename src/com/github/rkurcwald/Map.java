@@ -89,32 +89,32 @@ public class Map extends JPanel {
         	        {
         	        	cordsTable=CORDS.get(k).split(",");
         	        	cordX=Integer.parseInt(cordsTable[0]);
-        	        	System.out.println(cordX);
+        	   //     	System.out.println(cordX);
         	        	cordY=Integer.parseInt(cordsTable[1]);
-        	        	System.out.println(cordY);
+        	  //      	System.out.println(cordY);
         	        	if(cordX<500)
             			{
         	        		cordXX=500-cordX;
             				cordX=250-cordXX;
-            				System.out.println("1X   "+cordX);
+            //				System.out.println("1X   "+cordX);
             			}
         	        	else
         	        	{
         	        		cordXX=cordX-499;
             				cordX=250+cordXX;
-            				System.out.println("2X   "+cordX);
+            //				System.out.println("2X   "+cordX);
         	        	}
         	        	if(cordY<500)
             			{
         	        		cordYY=500-cordY;
             				cordY=250-cordYY;
-            				System.out.println("1Y   "+cordX);
+            //				System.out.println("1Y   "+cordX);
             			}
         	        	else
         	        	{
         	        		cordYY=cordY-499;
             				cordY=250+cordYY;
-            				System.out.println("2Y   "+cordX);
+            //				System.out.println("2Y   "+cordX);
         	        	}
         	        	this.terrainGrid[cordX][cordY] = ENEMY;
         	        }
