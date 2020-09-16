@@ -1,6 +1,6 @@
 # Tribal Wars Action Planning Tool
-- [X] English version  
-- [X] Polska wersja  
+- [ ] English version  
+- [ ] Polska wersja  
   
 ## ENGLISH VERSION  
 - GETTING ALL DATA FROM API:  
