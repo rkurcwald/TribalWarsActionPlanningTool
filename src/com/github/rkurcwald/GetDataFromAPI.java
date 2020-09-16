@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 import javax.swing.text.Document;
 
-public class GetPlayerDataFromAPI 
+public class GetDataFromAPI 
 {
 	//GameLinkValue glv = new GameLinkValue();
 	//"http://pl158.plemiona.pl/map/player.txt"
@@ -28,7 +28,7 @@ public class GetPlayerDataFromAPI
 	private String stringURL="",tmpURL="";
 	
 
-	public GetPlayerDataFromAPI(GameLinkValue glv) throws Exception
+	public GetDataFromAPI(GameLinkValue glv) throws Exception
 	{
 		tmpURL=stringURL=glv.getFullLink()+APILINK;
 		getData("village");
