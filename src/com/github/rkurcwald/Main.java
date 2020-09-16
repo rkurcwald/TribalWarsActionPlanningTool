@@ -12,24 +12,23 @@ public class Main extends JPanel {
 		String gameLink="plemiona.pl";	//Get From GUI
 		
         GameLinkValue glv= new GameLinkValue(currentWorld,gameLink);
- //       glv.setWorld(currentWorld);
- //       glv.setGameLink(gameLink);
 		
-        GetPlayerDataFromAPI playerData;
+        GetPlayerDataFromAPI apiData;
 		try {
-			playerData = new GetPlayerDataFromAPI(glv);
-			ArrayList<String> test= playerData.getPlayerData();
+			apiData = new GetPlayerDataFromAPI(glv);
 			
-			for(int i=0;i<test.size();i++)
+/*	//		ArrayList<String> test= apiData.getPlayerData();
+	//		ArrayList<String> test= apiData.getVillageData();
+	//		ArrayList<String> test= apiData.getAllyData();
+			for(int i=0;i<test.size();i++)      //IT WORKS!
 			{
 				System.out.println(test.get(i));
 			}
+			*/
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         
-      //  System.out.println(test.get(2));
         
 		SwingUtilities.invokeLater(new Runnable() {
             public void run() {
